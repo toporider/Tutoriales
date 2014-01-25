@@ -1,0 +1,639 @@
+\documentclass[10pt]{beamer}
+
+\usetheme{default}
+\beamertemplatenavigationsymbolsempty
+
+\definecolor{fore}{RGB}{249,242,215}
+\definecolor{back}{RGB}{51,51,51}
+\definecolor{title}{RGB}{255,0,90}
+
+\setbeamercolor{titlelike}{fg=title}
+\setbeamercolor{normal text}{fg=fore,bg=back}
+
+\usepackage{listings,bera}
+\usepackage{hyperref}
+\definecolor{keywords}{RGB}{255,0,90}
+\definecolor{comments}{RGB}{60,179,113}
+\lstset{language=Python,
+keywordstyle=\color{keywords},
+commentstyle=\color{comments}\emph}
+
+\begin{document}
+\begin{frame}[fragile]
+\frametitle{Python}
+Python es un lenguaje de programaci\'on de prop\'osito general de alto nivel:
+\begin{itemize}
+\item Dado que el c\'odigo se compila autom\'aticamente y es  ejecutado, Python es adecuado para su uso como lenguaje de implementaci\'on de aplicaciones web, o programaci\'on matem\'atica, etc.
+\item Porque Python puede ampliarse en C y C++, Python puede proporcionar la velocidad necesaria, incluso para computar tareas intensivas.
+\item Debido a sus buenas  construcciones de estructura  (bloques de c\'odigo anidados, funciones, clases, m\'odulos y paquetes) y su uso consistente de los objetos y la programaci\'on orientada a objetos, Python nos permite escribir, aplicaciones l\'ogicas claras para tareas peque\~nas y grandes.
+\end{itemize}
+\end{frame}
+
+%\begin{document}
+\begin{frame}[fragile]
+\frametitle{Importantes caracter\'isticas de Python}
+
+\begin{itemize}
+\item Tipos de datos incorporados: cadenas, listas, diccionarios, etc.
+\item Las estructuras de control habituales: if, if-else, if-elif-else, while, adem\'as del potente iterador (for).
+\item Varios niveles de estructura organizativa: funciones, clases, m\'odulos y paquetes. Estos ayudan en la organizaci\'on de c\'odigo. Un ejemplo excelente  es la librer\'ia est\'andar de Python.
+\item Compilar sobre la marcha el  c\'odigo de bytes. El c\'odigo fuente es compilado a c\'odigo de bytes sin un paso de compilaci\'on independiente.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Importantes caracter\'isticas de Python}
+\begin{itemize}
+\item Python proporciona una forma consistente para utilizar objetos: todo es un objeto. Y en Python es f\'acil de poner en pr\'actica nuevos tipos de objetos (llamados clases).
+\item Extensiones en C y C++. M\'odulos de extensi\'on usando herramientas como Swig.
+\item Jython es una versi\'on de Python que funciona 'bien' con Java. \href{http://www.jython.org/Project/}{\underline{The Jython Project.}} 
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Algunos enlaces importantes}
+
+\begin{itemize}
+\item Todo el mundo Python esta aqu\'i, \href{http://www.python.org}{\underline{Web de Python.}}
+\item El conjunto de documentaci\'on de Python est\'andar, \href{http://www.python.org/doc/}{\underline{Python documentation.}} 
+\item P\'agina de Ipython, un entorno interactivo de computaci\'on cient\'ifica, 
+\href{http://ipython.org/}{\underline{Ipython interactive computing.}}
+\item Una serie de art\'iculos, sobre la parte interna de Python, \href{http://tech.blog.aknin.name/2010/04/02/pythons-innards-introduction/}{\underline{Python Internal.}}
+\item Art\'iculos traducidos sobre el estilo de Python y mucho mas, \href{http://mundogeek.net/traducidos/}{\underline{Python idiom\'atico.}}
+\item Una colecci\'on de lecturas de Python, sobre muchos temas, \href{http://jessenoller.com/good-to-great-python-reads/}{\underline{Lecturas de Python.}}
+
+\end{itemize}
+
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Corriendo Python}
+\begin{lstlisting}
+% python
+Python 2.7.5+ (default, Sep 19 2013, 13:49:51) 
+[GCC 4.8.1] on linux2
+Type "help", "copyright", "license" for more information.
+>>> print "Python"
+Python
+\end{lstlisting}
+
+
+\vspace{0.3cm}
+
+Sobre Windows y Macintosh
+
+\begin{itemize}
+\item Python es lanzado como una aplicaci\'on.
+\item Una ventana con un interprete aparece y tu puedes ver el prompt.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Corriendo Python}
+El programa se termina al  
+
+\begin{itemize}
+\item Tipear Control-D o Control-Z en el prompt interactivo.
+\item El programa corre hasta que EOF es alcanzado.
+\item o si escribimos
+\begin{lstlisting}
+raise SystemExit
+\end{lstlisting}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Convenci\'on-PEP8}
+Python utiliza indentaci\'on para mostrar la estructura de bloque. Indentaci\'on en el primer nivel muestra el inicio de un bloque. 'La proxima  indentaci\'on fuera ' de la anterior  muestra  el final de un bloque. Por ejemplo: 
+
+\vspace{0.2cm}
+
+
+\begin{lstlisting}
+if x:
+    if y:
+        f1()
+    f2()
+\end{lstlisting}
+
+Y, la convenci\'on es usar cuatro espacios para cada nivel de indentaci\'on. En realidad, es m\'as que una convenci\'on, es pr\'acticamente un requisito.
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{El primer programa}
+\textbf{Hello World}
+
+\vspace{0.2cm}
+
+\begin{lstlisting}
+>>> print "Hola a todos"
+Hola a todos
+\end{lstlisting}
+
+\vspace{0.2cm}
+
+Podemos poner algo de c\'odigo en un archivo hello.py, como esto
+  
+\begin{lstlisting}
+print "Hola a todos"
+\end{lstlisting}
+\vspace{0.2cm}
+
+y ejecutarlo de la siguiente forma
+
+\vspace{0.2cm}
+
+\begin{lstlisting}
+% python hello.py 
+\end{lstlisting}
+
+
+%\vspace{0.2cm}
+
+%o se puede usar el familiar 
+%\begin{lstlisting}
+%#!/usr/bin/python
+%print "Hola a todos"
+%\end{lstlisting} 
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Variables y Expresiones}
+\vspace{0.2cm}
+
+\textbf{Expresiones}
+\vspace{0.2cm}
+
+Las operaciones \'estandar de matem\'aticas trabajan como otros lenguajes.
+\begin{lstlisting}
+3+4
+3 ** 4
+'Hello' +'Python'
+3 * ( 4 + 5)
+\end{lstlisting}
+
+\textbf{Asignamiento de Variables}
+\vspace{0.2cm}
+
+\begin{lstlisting}
+a = 4 << 3
+b = a * 4.5
+c = (a + b)/2.5
+d = "Hello World"
+\end{lstlisting}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Variables y Expresiones}
+\begin{itemize}
+\item Las variables son tipeadas din\'amicamente (No tipificaci\'on expl\'icita, los tipos pueden cambiar durante la execuci\'on.)
+\item Las variables son s\'olo nombres para un objeto. No est\'an atados a una localizaci\'on de memoria como en C.
+
+\item El operador de asignaci\'on crea una asociaci\'on entre el nombre y el valor. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Variables y Expresiones}
+Escribir en un archivo de texto con la extensi\'on .py lo siguiente y ejecutarlo
+
+\vspace{0.3cm}
+
+
+\begin{lstlisting}
+principal = 1200    # Cantidad inicial 
+rate = 0.05         # Taza de interes
+numyears = 5        
+year =1
+while year <= numyears:
+    principal = principal * (1 + rate)
+    print year, principal
+    year += 1
+\end{lstlisting}
+
+\vspace{0.3cm}
+
+Y el resultado es.....
+
+\vspace{0.2cm}
+
+\href{run:ejemplo1.py}{\underline{Variable0.py}}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Condicionales}
+
+\textbf{if-else}
+\begin{lstlisting}
+# Calcular el maximo de a y b
+if a < b:
+    z = b
+else:
+    z =a
+\end{lstlisting}
+
+\textbf{La declaraci\'on pass}
+\begin{lstlisting}
+if a < b :
+    pass     # No se hace nada
+else:
+    z = a
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Condicionales}
+\textbf{Notas:}
+\begin{itemize}
+\item La indentaci\'on es usada para denotar los cuerpos de  if-else.
+\item pass es usado para denotar un cuerpo vac\'io.
+\item Python no tiene una especial declaraci\'on \textit{switch} o \textit{case} para testear valores. Para manejar m\'ultiples casos de test, usamos la declaraci\'on \textit{elif}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Condicionales}
+\textbf{Declaraci\'on elif}
+
+\begin{lstlisting}
+if a == 'Python':
+    op = 1
+elif a == 'C++':
+    op = 2
+elif a = 'Node':
+    op = 3
+else:
+    op = 4
+\end{lstlisting}
+
+\vspace{0.2cm}
+
+\textbf{Expresiones booleanas: and, or, not}
+
+\begin{lstlisting}
+if b >=a and b <=c :
+    print "b esta entre a y c"
+if not (b < a or b > c):
+    print "b esta todavia entre a y c"
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Tipos b\'asicos (N\'umeros y cadenas)}
+\textbf{N\'umeros}
+\begin{lstlisting}
+a = 3               # Entero
+b = 4.9             # Punto flotante
+c = 57484442227L   # Entero grande (Precision arbitraria)
+d = 3 + 8j          # Numero Complejo
+\end{lstlisting}
+
+\vspace{0.2cm}
+
+\textbf{Cadenas}
+
+\begin{lstlisting}
+a = 'Python'         # Una coma
+b = "Optimizacion"   # Doble coma
+c =  "Python tiene un modulo llamado 'Numpy'"
+d ='''Una cadena de triple coma
+puede escribirse  en multiples
+lineas '''
+e ="""Tambien trabaja para 
+comas dobles y todo funciona bien"""
+\end{lstlisting}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Tipos b\'asicos (Listas)}
+\textbf{Lista de arbitrarios objetos}
+
+\begin{lstlisting}
+a = [2,3,4]                 # Una lista de enteros
+b = [2, 7, 3.5, "Python"]   # Una mix de objetos
+c = []                      # Una lista vacia
+d = [3, [a,b]]              # Una lista de lista
+e = a + b                   # Unir una lista
+\end{lstlisting}
+
+\textbf{Manipulaci\'on de lista}
+
+\begin{lstlisting}
+x = a[1]                    # 2-elemento de la lista
+y = b[1:3]                  # Retorna una sublista
+z = d[1][0][2]              # Lista anidada
+b[0] = 42                   # Cambia un elemento
+\end{lstlisting}
+
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Tipos b\'asicos (Tuplas)}
+\textbf{Tuplas}
+
+\begin{lstlisting}
+f = (3, 6, 7)         # Una tupla de enteros
+g = (,)               # Una tupla vacia
+h =(2, [3,4], (10,11,12))   
+\end{lstlisting}
+
+\textbf{Manipulaci\'on de tuplas}
+\begin{lstlisting}
+x = f[1]             # acceder al elemento, x=3
+y = f[1:3]           # y = (3,4)
+z = h[1][1]          # z = 4
+\end{lstlisting}
+
+\vspace{0.3cm}
+\begin{itemize}
+\item Las tuplas son como las listas, pero el tama\~no es fijado en el tiempo de creaci\'on.
+\item No podemos reemplazar los miembros de una lista (se dice que es 'inmutable').
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Tipos b\'asicos (Diccionarios)}
+\textbf{Diccionarios}
+\begin{lstlisting}
+a = {}
+b = {'Django': 1, 'Node.js' :2, 'R':3, }
+c = {'uid' : 105,
+	 'login' : 'Lara',
+	 'name':  'Cesar Lara Avila'
+	 }
+\end{lstlisting}
+
+\textbf{Acceso a diccionarios}
+\begin{lstlisting}
+u = c['iud']              
+c['shell'] = "/bin/zsh"  # Colocamos un nuevo elemento
+if c.has_key("login"):   # Vemos si esta este elemento
+    d = c['login']      
+else:
+    d = None
+    
+d = c.get("login", None) # Lo mismo, pero mas compacto
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Bucles}
+\textbf{La declaraci\'on While}
+\begin{lstlisting}
+while a < b:
+    # Hacer algo
+    a = a +1
+\end{lstlisting}
+
+\vspace{0.2cm}
+
+\textbf{La declaraci\'on for (Iterar sobre los miembros de una secuencia)}
+
+\begin{lstlisting}
+for n in range (1,10):
+    print "2 a la potencia %d is %d" %(n, 2**n)
+\end{lstlisting}
+
+\vspace{0.3cm}
+
+\textbf{Nota:}
+
+\textit{range(i, j, [, paso])} es una funci\'on que crea un objeto que representa un rango de enteros con valores desde \textit{i} a \textit{j - 1}.
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Bucles}
+\begin{itemize}
+\item La declaraci\'on \textit{for } no est\'a limitada a secuencias de n\'umeros y puede ser usada para iterar sobre muchos tipos de objetos incluyendo listas, diccionarios y archivos.
+\href{run:ejemplo1.py}{\underline{ejemplo3.py}}
+\item El bucle for es una de las caracter\'isticas m\'as poderosas de Python muy relacionadas a funciones generadores y programaci\'on funcional.
+
+\end{itemize}
+
+
+\vspace{0.3cm}
+
+
+\href{run:funcion0.py}{\underline{Basico-Python.py}}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Funciones}
+\textbf{La declaraci\'on def }
+\begin{lstlisting}
+#Retorna el resto de a/b
+def remainder (a,b):
+    q = a//b       # truncamiento de la division
+    r = a - q*b
+    return r
+    
+#Ahora como usarlo
+a = remainder (42,5)      # a = 2
+\end{lstlisting}
+
+\textbf{Retornando m\'ultiples valores}
+\begin{lstlisting}
+def divide(a,b):
+    q = a//b
+    r = a - q*b
+    return r
+x ,y =  divide(42, 5)  # x = 8, y = 2
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Funciones}
+
+\begin{lstlisting}
+def test(msg, count):
+    for idx in range(count):
+        print '%s %d' % (msg, idx)
+
+test('Test:', 3)
+\end{lstlisting}
+
+
+\vspace{0.3cm}
+
+Al igual que con otros objetos de Python, puedes rellenar un objeto funci\'on en otras estructuras como tuplas, listas y diccionarios. He aqu\'i un ejemplo:
+
+\vspace{0.3cm}
+
+\begin{lstlisting}
+# Creamos una tupla:
+val = (test, 'A_label:', 5)
+
+# Llamamos a la funcion:
+val[0](val[1], val[2])
+\end{lstlisting}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Funciones}
+\textbf{Una funci\'on con argumentos por defecto}
+
+\vspace{0.3cm}
+
+\begin{lstlisting}
+def testDefaultArgs(arg1='default1', arg2='default2'):
+    print 'arg1:', arg1
+    print 'arg2:', arg2
+
+testDefaultArgs('Otro valor')
+\end{lstlisting}
+
+
+\vspace{0.3cm}
+
+\footnotesize{La salida debe ser algo as\'i}
+
+\vspace{0.3cm}
+
+\begin{lstlisting}
+arg1: Otro valor
+arg2: default2
+\end{lstlisting}
+\href{run:funcion0.py}{\underline{funcion0.py}}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Funciones}
+\textbf{Las listas de argumentos y listas de argumentos de palabra clave (keywords)}
+
+\vspace{0.3cm}
+
+\begin{lstlisting}
+def testArgLists_1(*args, **kwargs):
+    print 'args:', args
+    print 'kwargs:', kwargs
+
+
+testArgLists_1('aaa', 'bbb', arg1='ccc', arg2='ddd')
+
+
+def testArgLists_2(arg0, *args, **kwargs):
+    print 'arg0: "%s"' % arg0
+    print 'args:', args
+    print 'kwargs:', kwargs
+
+
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Funciones}
+\begin{lstlisting}
+def test():
+    testArgLists_1('aaa', 'bbb', arg1='ccc', arg2='ddd')
+    print '-' * 40
+    testArgLists_2('Primer argumento', 'aaa', 'bbb', 
+                      arg1='ccc', arg2='ddd')
+test()
+\end{lstlisting}
+
+
+\vspace{0.3cm}
+
+\footnotesize{Como resultado de ejecutar esto, tenemos:}
+
+\begin{lstlisting}
+args: ('aaa', 'bbb')
+kwargs: {'arg1': 'ccc', 'arg2': 'ddd'}
+args: ('aaa', 'bbb')
+kwargs: {'arg1': 'ccc', 'arg2': 'ddd'}
+-------------------------------------
+arg0:" Primer argumento"
+args: ('aaa', 'bbb')
+kwargs: {'arg1': 'ccc', 'ag2': 'ddd'}
+\end{lstlisting}
+\href{run:funcion1.py}{\underline{funcion1.py}}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Funciones}
+\textbf{Llamar a una funci\'on con argumentos de palabra clave}
+
+\href{run:funcion1.py}{\underline{funcion2.py}}
+\vspace{0.3cm}
+
+\begin{lstlisting}
+#Llamando a una funcion con argumentos
+#de palabras claves (keyword)
+ 
+def test_keyword_args(color_1 ='verde',
+         color_2 = 'azul',
+	     color_3 = 'red',
+         color_4 = 'marron'):
+         print 'color_1: "%s"'   %color_1
+         print 'color_2: "%s"'   %color_2
+         print 'color_3: "%s"'   %color_3
+         print 'color_4: "%s"'   %color_4
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Funciones}
+
+%\textbf{Llamar a una funci\'on con argumentos de palabra clave}
+
+\vspace{0.3cm}
+
+\begin{lstlisting}
+def test():
+
+      test_keyword_args()
+      print '-'*40
+      test_keyword_args(color_2 ='amarillo')
+      print '-' *40
+      test_keyword_args(color_3 = 'naranja',
+              color_4 = 'violeta')
+  
+test()
+
+\end{lstlisting}
+
+Comprobar el resultado. 
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Ejercicio }
+\vspace{0.2cm}
+
+Ejecutar el archivo \href{run:funcion1.py}{\underline{funcion3.py}} y  en un archivo con la extensi\'on .py  escribir el siguiene c\'odigo,
+
+\vspace{0.3cm}
+ 
+
+\begin{lstlisting}
+def print_two(*args):
+    arg1, arg2 = args
+    print "arg1: %r, arg2: %r" %(arg1, arg2)
+def print_two_again(arg1, arg2):
+    print "arg1: %r, arg2: %r" %(arg1, arg2)
+def print_one(arg1):
+    print "arg1: %r" %arg1
+def print_none():
+    print "Nada"
+
+print_two("-----", "-----")
+print_two_again("-----", "-----")
+print_one("-----")
+print_no
+\end{lstlisting}
+
+
+\end{frame}
+
+%\begin{frame}[fragile]
+%\frametitle{Funciones}
+%Consolidemos todo con el \href{run:ejemplo1.py}{\underline{ejemplo4.py}}
+%\end{frame}
+\end{document}
